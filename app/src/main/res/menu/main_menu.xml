@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/choicedate_settings"
+        android:orderInCategory="1"
+        android:title="Выбрать дату"
+        />
+    <item
+        android:id="@+id/Propyski_za_mesiac_settings"
+        android:orderInCategory="3"
+        android:title="Пропуски за месяц" />
+
+    <item
+        android:id="@+id/save_settings"
+        android:orderInCategory="2"
+        android:title="Сохранить" />
+
+    <item
+        android:id="@+id/about_settings"
+        android:orderInCategory="4"
+        android:title="О программе " />
+</menu>

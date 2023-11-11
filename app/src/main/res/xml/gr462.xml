@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<students xmlns:android="http://schemas.android.com/apk/res/android">
+    <student>Бричковская А. И.</student>
+    <student>Гавдис А. В.</student>
+    <student>Гольштейн А. М.</student>
+    <student>Жданович Д. Ф.</student>
+    <student>Заричный И. А.</student>
+    <student>Кадыко А. В.</student>
+    <student>Климашевский А. В.</student>
+    <student>Константинов Р. Р.</student>
+    <student>Лазерко П. А.</student>
+    <student>Новиков К. Д.</student>
+    <student>Подольский Е. А.</student>
+    <student>Романкевич В. С.</student>
+    <student>Стракович В. А.</student>
+    <student>Шмат Н. С.</student>
+    <student>Ярмоц А. С.</student>
+</students>

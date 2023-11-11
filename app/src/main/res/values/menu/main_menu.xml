@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/choicedate_settings"
+        android:orderInCategory="1"
+        android:title="Выбрать дату" />
+    <item
+        android:id="@+id/Propyski_za_mesiac_settings"
+        android:orderInCategory="5"
+        android:title="Пропуски за месяц" />
+
+
+    <item
+        android:id="@+id/open_settings"
+        android:orderInCategory="3"
+        android:title="Обновить данные" />
+
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="4"
+        android:title="Настройки" />
+    <item
+    android:id="@+id/logOut_settings"
+    android:orderInCategory="6"
+    android:title="Выйти из учётной записи" />
+    <item
+        android:id="@+id/save_settings"
+        android:orderInCategory="2"
+        android:title="Сохранить" />
+
+    <item
+        android:id="@+id/about_settings"
+        android:orderInCategory="7"
+        android:title="О программе " />
+</menu>

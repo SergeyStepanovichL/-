@@ -1,0 +1,2347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/color2">
+    <ViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:ignore="MissingConstraints">
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/KolPropyskov"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="Пропуски" />
+            <TableRow
+                android:id="@+id/TableRowDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Дата"
+                    android:textSize="16dp"
+                    android:background="@color/color4"
+                    android:textColor="@color/black"
+                    />
+
+
+                <TextView
+                    android:id="@+id/Data"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:background="@color/color4"
+                    android:textColor="@color/black"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRowNomerGrypps"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color1">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+
+                    android:gravity="center"
+                    android:text="Номер группы"
+
+                    android:textColor="@color/black"/>
+
+                <Spinner
+                    android:id="@+id/NamberGrypp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:contentDescription=" "
+                    android:gravity="center"
+                    android:textSize="16dp"
+
+                    tools:ignore="TouchTargetSizeCheck"
+
+                    android:textColor="@color/black"/>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="№"
+                    android:textSize="16dp"
+
+                    android:background="@color/color4"
+                    android:textColor="@color/black"/>
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="ФИО"
+                    android:textSize="16dp"
+
+                    android:background="@color/color1"
+                    android:textColor="@color/black"
+
+                    />
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8">
+
+                    <TableRow
+                        android:id="@+id/wh"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="20sp"
+                        android:background="@color/color4"
+                        android:layout_weight="2">
+                        <Spinner
+                            android:id="@+id/Para1"
+                            android:layout_width="0dp"
+                            android:layout_height="20sp"
+                            android:layout_weight="2"
+                            android:contentDescription=" "
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="20sp"
+                        android:layout_weight="2"
+                        android:background="@color/color1">
+                        <Spinner
+                            android:id="@+id/Para2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:contentDescription=" "
+                            tools:ignore="TouchTargetSizeCheck"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="20sp"
+                        android:layout_weight="2"
+                        android:background="@color/color4">
+
+                        <Spinner
+                            android:id="@+id/Para3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:contentDescription=" "
+                            tools:ignore="TouchTargetSizeCheck"
+
+                            />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="20sp"
+                        android:layout_weight="2"
+                        android:background="@color/color1">
+                        <Spinner
+                            android:id="@+id/Para4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:contentDescription=" "
+                            tools:ignore="TouchTargetSizeCheck"/>
+                    </TableRow>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/TextViewPara1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:text="Пара №1"
+                            android:background="@color/color4"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/TextViewPara2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:text="Пара №2"
+                            android:background="@color/color1"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/TextViewPara3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:text="Пара №3"
+                            android:background="@color/color4"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/TextViewPara4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:text="Пара №4"
+                            android:background="@color/color1"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                </TableLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                tools:ignore="ExtraText"
+                android:id="@+id/TR1"
+                >
+
+
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/PN1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N11"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N12"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N13"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N14"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR2"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="2" />
+
+                <TextView
+                    android:id="@+id/PN2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"/>
+
+                <EditText
+                    android:id="@+id/N21"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N22"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N23"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N24"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR3"
+                tools:ignore="ExtraText"
+                >
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="3" />
+
+                <TextView
+                    android:id="@+id/PN3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N31"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N32"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N33"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N34"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR4"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="4" />
+
+                <TextView
+                    android:id="@+id/PN4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N41"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N42"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N43"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N44"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR5"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="5" />
+
+                <TextView
+                    android:id="@+id/PN5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N51"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N52"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N53"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N54"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR6"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="6" />
+
+                <TextView
+                    android:id="@+id/PN6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N61"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N62"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N63"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N64"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR7"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="7" />
+
+                <TextView
+                    android:id="@+id/PN7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N71"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N72"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N73"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N74"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR8"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="8" />
+
+                <TextView
+                    android:id="@+id/PN8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N81"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N82"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N83"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N84"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR9"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="9" />
+
+                <TextView
+                    android:id="@+id/PN9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N91"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N92"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N93"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N94"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR10"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="10" />
+
+                <TextView
+                    android:id="@+id/PN10"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N101"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N102"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N103"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N104"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR11"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="11" />
+
+                <TextView
+                    android:id="@+id/PN11"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N111"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N112"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N113"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N114"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR12"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="12" />
+
+                <TextView
+                    android:id="@+id/PN12"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/N121"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+
+
+                <EditText
+                    android:id="@+id/N122"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N123"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N124"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR13"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="13" />
+
+                <TextView
+                    android:id="@+id/PN13"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N131"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N132"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N133"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N134"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR14"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="14" />
+
+                <TextView
+                    android:id="@+id/PN14"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N141"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N142"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N143"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N144"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR15"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="15" />
+
+                <TextView
+                    android:id="@+id/PN15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N151"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N152"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N153"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N154"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR16"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="16" />
+
+                <TextView
+                    android:id="@+id/PN16"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N161"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N162"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N163"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N164"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR17"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="17" />
+
+                <TextView
+                    android:id="@+id/PN17"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N171"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N172"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N173"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N174"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR18"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="18" />
+
+                <TextView
+                    android:id="@+id/PN18"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N181"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N182"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N183"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N184"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR19"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="19" />
+
+                <TextView
+                    android:id="@+id/PN19"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N191"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N192"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N193"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N194"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR20"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="20" />
+
+                <TextView
+                    android:id="@+id/PN20"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N201"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N202"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N203"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N204"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR21"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="21" />
+
+                <TextView
+                    android:id="@+id/PN21"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N211"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N212"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N213"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N214"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR22"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="22" />
+
+                <TextView
+                    android:id="@+id/PN22"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N221"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N222"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N223"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N224"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR23"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="23" />
+
+                <TextView
+                    android:id="@+id/PN23"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N231"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N232"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N233"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N234"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR24"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="24" />
+
+                <TextView
+                    android:id="@+id/PN24"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N241"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N242"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N243"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N244"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR25"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="25" />
+
+                <TextView
+                    android:id="@+id/PN25"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N251"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N252"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N253"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N254"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR26"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="26" />
+
+                <TextView
+                    android:id="@+id/PN26"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N261"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N262"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N263"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N264"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR27"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="27" />
+
+                <TextView
+                    android:id="@+id/PN27"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N271"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N272"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N273"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N274"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR28"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="28" />
+
+                <TextView
+                    android:id="@+id/PN28"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N281"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N282"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N283"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N284"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR29"
+                tools:ignore="ExtraText">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="29" />
+
+                <TextView
+                    android:id="@+id/PN29"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N291"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N292"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N293"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N294"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TR30"
+                tools:ignore="ExtraText"
+                android:background="@color/color5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="30" />
+
+                <TextView
+                    android:id="@+id/PN30"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="-"
+                    />
+
+                <EditText
+                    android:id="@+id/N301"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+                />
+
+                <EditText
+                    android:id="@+id/N302"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N303"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/N304"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="0"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+    </ViewFlipper>
+</androidx.constraintlayout.widget.ConstraintLayout>
