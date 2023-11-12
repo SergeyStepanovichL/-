@@ -7,7 +7,6 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.content.res.XmlResourceParser;
 import android.icu.text.SimpleDateFormat;
 import android.net.ParseException;
@@ -20,11 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ScrollView;
@@ -34,13 +29,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.DatePicker;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.BufferedReader;
@@ -58,19 +51,35 @@ import java.util.Calendar;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import android.os.Bundle;
-import android.os.Environment;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    int [][] arrN;
+    int [] sumN;
+    TextView[][] arrTextViewWithN;
+    TextView[] textViews;
+    int studentCount;
+    int resIDN;
+    int resID;
+    int [][] VseN;
+    String [] ArrPar;
+    TextView Date;
+    TextView sel;
+    String strN;
+    int year ;
+    int month ;
+    int day ;
+    TextView textView;
+    Spinner[] spinners;
+    Spinner namberGrypp;
+    final Calendar c = Calendar.getInstance();
+    String str;
+    TextView selection;
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -91,7 +100,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void animacia(){
+    @SuppressLint("ClickableViewAccessibility")
+    public void animalcia(){
 
 
         // Найдите ViewFlipper в вашем макете
@@ -144,14 +154,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void WorkWithExcel(){
         int studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
-        int [][] arrN = new int[studentCount][4];
-        int [] sumN = new int[studentCount];
-        TextView[][] arrTextViewWithN = new TextView[studentCount][4];
+         arrN = new int[studentCount][4];
+         sumN = new int[studentCount];
+         arrTextViewWithN = new TextView[studentCount][4];
 
         for (int i = 0; i < studentCount; i++) {
             for (int j = 0; j < 4; j++) {
                 String strN = "N" + (i + 1) + (j + 1);
-                int resIDN = getResources().getIdentifier(strN, "id", getPackageName());
+                resIDN = getResources().getIdentifier(strN, "id", getPackageName());
                 arrTextViewWithN[i][j] = (TextView) findViewById(resIDN);
             }
         }
@@ -184,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
             protected Void doInBackground(Void... voids) {
                 try {
                     // Получаем значение из TextView
-                    TextView textView = (TextView) findViewById(R.id.Data);
+                     textView = (TextView) findViewById(R.id.Data);
                     String textValue = textView.getText().toString();
                     int dotIndex = textValue.indexOf(".");
                     int columnNumber = Integer.parseInt(textValue.substring(0, dotIndex));
@@ -200,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // Если файл существует, открываем его, иначе создаем новый
                     InputStream is = Files.newInputStream(file.toPath());
-                    workbook = WorkbookFactory.create(is);
+                    workbook = WorkbookFactory.create(is);//////////////////////W/System.err:     at com.example.propyski4.MainActivity$3.doInBackground(MainActivity.java:212)
 
                     // Если лист существует, используем его, иначе создаем новый
                     if (workbook.getNumberOfSheets() > 0) {
@@ -250,9 +260,9 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0 ; i<arrN.length; i++){
             int sum = 0;
             for (int j = 0 ; j<arrN[i].length; j++) {
-                String str = "N"+(i+1)+(j+1);
-                int resID = getResources().getIdentifier(str, "id", getPackageName());
-                TextView selection = findViewById(resID);
+                 str = "N"+(i+1)+(j+1);
+                resID = getResources().getIdentifier(str, "id", getPackageName());
+                 selection = findViewById(resID);
 
                 if (selection != null) { // Проверка на null
                     String text = selection.getText().toString();
@@ -319,19 +329,19 @@ public class MainActivity extends AppCompatActivity {
 
     //Метод который должен проверять столбцы на значение "Нет пары"
     public void ProverkaCtolbcov() {
-        TextView[] textViews = new TextView[]{
+        textViews = new TextView[]{
                 (TextView) findViewById(R.id.TextViewPara1),
                 (TextView) findViewById(R.id.TextViewPara2),
                 (TextView) findViewById(R.id.TextViewPara3),
                 (TextView) findViewById(R.id.TextViewPara4)
         };
-        int studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
-        TextView[][] arrTextViewWithN = new TextView[studentCount][4];
+        studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
+        arrTextViewWithN = new TextView[studentCount][4];
 
         for (int i = 0; i < studentCount; i++) {
             for (int j = 0; j < 4; j++) {
-                String strN = "N" + (i + 1) + (j + 1);
-                int resIDN = getResources().getIdentifier(strN, "id", getPackageName());
+                strN = "N" + (i + 1) + (j + 1);
+                resIDN = getResources().getIdentifier(strN, "id", getPackageName());
                 arrTextViewWithN[i][j] = (TextView) findViewById(resIDN);
             }
         }
@@ -348,16 +358,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateTableRows() {
         TableRow[] rows = new TableRow[30];
-        TextView[][] arrTextViewWithN = new TextView[30][4];
+        arrTextViewWithN = new TextView[30][4];
 
         for (int i = 0; i < rows.length; i++) {
-            String str = "TR" + (i + 1);
-            int resID = getResources().getIdentifier(str, "id", getPackageName());
+             str = "TR" + (i + 1);
+             resID = getResources().getIdentifier(str, "id", getPackageName());
             rows[i] = (TableRow) findViewById(resID);
 
             for (int j = 0; j < 4; j++) {
-                String strN = "N" + (i + 1) + (j + 1);
-                int resIDN = getResources().getIdentifier(strN, "id", getPackageName());
+                 strN = "N" + (i + 1) + (j + 1);
+                 resIDN = getResources().getIdentifier(strN, "id", getPackageName());
                 arrTextViewWithN[i][j] = (TextView) findViewById(resIDN);
             }
         }
@@ -381,7 +391,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 // Вызываем метод addDataToFileAndTextView при изменении даты или номера группы
-                int[][] VseN = new int[studentCount][4];
+                 VseN = new int[studentCount][4];
                 TextView[][] arrTextViewWithNSelected = Arrays.copyOfRange(arrTextViewWithN, 0, studentCount);
                 addDataToTextView(VseN, arrTextViewWithNSelected);
             }
@@ -394,16 +404,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void KolichestvoChasovPropyskovKashdogoYchashegosia(){
-        int studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
-        int [][] arrN = new int[studentCount][4];
-        int [] sumN = new int[studentCount];
-        int [][] VseN = new int[studentCount][4];
-        TextView[][] arrTextViewWithN = new TextView[studentCount][4];
+        studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
+        arrN = new int[studentCount][4];
+        sumN = new int[studentCount];
+        VseN = new int[studentCount][4];
+        arrTextViewWithN = new TextView[studentCount][4];
 
         for (int i = 0; i < studentCount; i++) {
             for (int j = 0; j < 4; j++) {
-                String strN = "N" + (i + 1) + (j + 1);
-                int resIDN = getResources().getIdentifier(strN, "id", getPackageName());
+                 strN = "N" + (i + 1) + (j + 1);
+                resIDN = getResources().getIdentifier(strN, "id", getPackageName());
                 arrTextViewWithN[i][j] = (TextView) findViewById(resIDN);
             }
         }
@@ -418,7 +428,7 @@ public class MainActivity extends AppCompatActivity {
     public int SpisokGrypp(int nomergrypp){
         String strr = "gr" + nomergrypp;
         int grID = getResources().getIdentifier(strr, "xml", getPackageName());
-        int studentCount = 0;
+        studentCount = 0;
 
         try {
             XmlResourceParser xpp = getResources().getXml(grID);
@@ -426,9 +436,9 @@ public class MainActivity extends AppCompatActivity {
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if(eventType == XmlPullParser.START_TAG && xpp.getName().equals("student")) {
                     String studentName = xpp.nextText();
-                    String str = "PN" + (studentCount + 1);
-                    int resID = getResources().getIdentifier(str, "id", getPackageName());
-                    TextView textView = (TextView) findViewById(resID);
+                     str = "PN" + (studentCount + 1);
+                     resID = getResources().getIdentifier(str, "id", getPackageName());
+                     textView = (TextView) findViewById(resID);
                     textView.setText(studentName);
                     studentCount++;
                 }
@@ -444,9 +454,9 @@ public class MainActivity extends AppCompatActivity {
     private int[][] ArrayForFail(int[][] arrN) {
         for (int i = 0 ; i<arrN.length; i++){
             for (int j = 0 ; j<arrN[i].length; j++) {
-                String str = "N"+(i+1)+(j+1);
-                int resID = getResources().getIdentifier(str, "id", getPackageName());
-                TextView selection = findViewById(resID);
+                 str = "N"+(i+1)+(j+1);
+                resID = getResources().getIdentifier(str, "id", getPackageName());
+                 selection = findViewById(resID);
 
                 if (selection != null) { // Проверка на null
                     String text = selection.getText().toString();
@@ -466,8 +476,8 @@ public class MainActivity extends AppCompatActivity {
         return arrN;
     }
     private String[] ArrayParForFail() {
-        String [] ArrPar = new String [4];
-        TextView[] textViews = new TextView[]{
+        ArrPar = new String [4];
+        textViews = new TextView[]{
                 (TextView) findViewById(R.id.TextViewPara1),
                 (TextView) findViewById(R.id.TextViewPara2),
                 (TextView) findViewById(R.id.TextViewPara3),
@@ -483,8 +493,8 @@ public class MainActivity extends AppCompatActivity {
         FileOutputStream Fos = null;
         try {
             // Получаем дату и номер группы
-            TextView Date = (TextView) findViewById(R.id.Data);
-            Spinner namberGrypp = (Spinner) findViewById(R.id.NamberGrypp);
+             Date = (TextView) findViewById(R.id.Data);
+             namberGrypp = (Spinner) findViewById(R.id.NamberGrypp);
             String date = Date.getText().toString();
             String groupNumber = namberGrypp.getSelectedItem().toString();
 
@@ -527,13 +537,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
-            TextView[] textViews = new TextView[]{
+            textViews = new TextView[]{
                     (TextView) findViewById(R.id.TextViewPara1),
                     (TextView) findViewById(R.id.TextViewPara2),
                     (TextView) findViewById(R.id.TextViewPara3),
                     (TextView) findViewById(R.id.TextViewPara4)
             };
-            String[] ArrPar = new String[4];
+            ArrPar = new String[4];
             if (filePars.exists()) {
                 // Если файл существует, читаем данные из файла
                 FileInputStream fis = openFileInput(fileForParName);
@@ -570,7 +580,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < VseN.length; i++) {
                 for (int j = 0; j < VseN[i].length; j++) {
                     str1 = Integer.toString(VseN[i][j]);
-                    arrTextViewWithN[i][j].setText(str1);
+                    arrTextViewWithN[i][j].setText(str1);///////////////////////////////ошибка at com.example.propyski4.MainActivity.addDataToTextView(MainActivity.java:573)
                 }
                 str1 = "\n";
             }
@@ -579,12 +589,10 @@ public class MainActivity extends AppCompatActivity {
                 textViews[i].setText(ArrPar[i]);
             }
 //Выводит теже нанные что и в файле на экран
-            String STR = "";
-            String str;
-            STR = date + "\n" + groupNumber + "\n";
-            for (int i = 0; i < VseN.length; i++) {
+            String STR = date + "\n" + groupNumber + "\n";
+            for(int i = 0; i < VseN.length; i++) {
                 for (int j = 0; j < VseN[i].length; j++) {
-                    str = Integer.toString(VseN[i][j]) + " ";
+                     str = Integer.toString(VseN[i][j]) + " ";
                     STR += str;
                 }
                 STR += "\n";
@@ -593,7 +601,7 @@ public class MainActivity extends AppCompatActivity {
                 STR += (ArrPar[i] + "\n");
             }
 
-            TextView sel = (TextView) findViewById(R.id.KolPropyskov);
+            sel = (TextView) findViewById(R.id.KolPropyskov);
             sel.setText(STR);
 
         } catch (Exception e) {
@@ -613,16 +621,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void SeivDataInFail() {
-        int studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
-        int [][] arrN = new int[studentCount][4];
-        int [][] VseN = new int[studentCount][4];
-        String [] ArrPar = new String [4];
+        studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
+        arrN = new int[studentCount][4];
+        VseN = new int[studentCount][4];
+        ArrPar = new String [4];
         ArrPar =  ArrayParForFail();
         VseN = ArrayForFail(arrN);
         try {
             // Получаем дату и номер группы
-            TextView Date = (TextView) findViewById(R.id.Data);
-            Spinner namberGrypp = (Spinner) findViewById(R.id.NamberGrypp);
+            Date = (TextView) findViewById(R.id.Data);
+             namberGrypp = (Spinner) findViewById(R.id.NamberGrypp);
             String date = Date.getText().toString();
             String groupNumber = namberGrypp.getSelectedItem().toString();
 
@@ -648,12 +656,10 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Добавляем теже данные что и в файле, на экран
-            String STR = "";
-            String str1;
-            STR = date + "\n" + groupNumber + "\n";
+            String STR = date + "\n" + groupNumber + "\n";
             for (int i = 0; i < VseN.length; i++) {
                 for (int j = 0 ; j<VseN[i].length; j++) {
-                    str1 = Integer.toString(VseN[i][j]) + " ";
+                    String str1 = Integer.toString(VseN[i][j]) + " ";
                     STR += str1;
                 }
                 STR += "\n";
@@ -662,7 +668,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 STR += (ArrPar[i]+"\n");
             }
-            TextView sel = (TextView) findViewById(R.id.KolPropyskov);
+            sel = (TextView) findViewById(R.id.KolPropyskov);
             sel.setText(STR);
 
             // Закрываем файл
@@ -682,6 +688,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -703,13 +710,13 @@ public class MainActivity extends AppCompatActivity {
     ////////////////
     public void setupDateToday() {
         // Получаем ссылку на TextView
-        TextView textView = findViewById(R.id.Data);
+         textView = findViewById(R.id.Data);
 
         // Получаем текущую дату
-        final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        int day = c.get(Calendar.DAY_OF_MONTH);
+
+         year = c.get(Calendar.YEAR);
+         month = c.get(Calendar.MONTH);
+         day = c.get(Calendar.DAY_OF_MONTH);
 
         // Форматируем текущую дату в виде строки
         String currentDate = day + "." + (month + 1) + "." + year;
@@ -719,14 +726,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Вызываем метод addDataToFileAndTextView при изменении даты
-        int studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
-        int[][] VseN = new int[studentCount][4];
-        TextView[][] arrTextViewWithN = new TextView[studentCount][4];
+         studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
+        VseN = new int[studentCount][4];
+        arrTextViewWithN = new TextView[studentCount][4];
 
         for (int i = 0; i < studentCount; i++) {
             for (int j = 0; j < 4; j++) {
-                String strN = "N" + (i + 1) + (j + 1);
-                int resIDN = getResources().getIdentifier(strN, "id", getPackageName());
+                strN = "N" + (i + 1) + (j + 1);
+                resIDN = getResources().getIdentifier(strN, "id", getPackageName());
                 arrTextViewWithN[i][j] = (TextView) findViewById(resIDN);
             }
         }
@@ -738,30 +745,30 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onDateMenuItemSelected() {
-        final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        int day = c.get(Calendar.DAY_OF_MONTH);
+
+         year = c.get(Calendar.YEAR);
+         month = c.get(Calendar.MONTH);
+         day = c.get(Calendar.DAY_OF_MONTH);
 
         DatePickerDialog dpd = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 // Получаем ссылку на TextView
-                TextView textView = findViewById(R.id.Data);
+                 textView = findViewById(R.id.Data);
                 // Форматируем выбранную дату в виде строки
                 String selectedDate = dayOfMonth + "." + (monthOfYear + 1) + "." + year;
                 // Отображаем выбранную дату в TextView
                 textView.setText(selectedDate);
 
                 // Вызываем метод addDataToFileAndTextView при изменении даты
-                int studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
-                int[][] VseN = new int[studentCount][4];
-                TextView[][] arrTextViewWithN = new TextView[studentCount][4];
+                 studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
+                 VseN = new int[studentCount][4];
+                 arrTextViewWithN = new TextView[studentCount][4];
 
                 for (int i = 0; i < studentCount; i++) {
                     for (int j = 0; j < 4; j++) {
-                        String strN = "N" + (i + 1) + (j + 1);
-                        int resIDN = getResources().getIdentifier(strN, "id", getPackageName());
+                         strN = "N" + (i + 1) + (j + 1);
+                         resIDN = getResources().getIdentifier(strN, "id", getPackageName());
                         arrTextViewWithN[i][j] = (TextView) findViewById(resIDN);
                     }
                 }
@@ -778,11 +785,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void NextDateMenuItemSelected() {
         // Получаем ссылку на TextView
-        TextView textView = findViewById(R.id.Data);
+         textView = findViewById(R.id.Data);
         // Получаем текущую дату из TextView
         String currentDate = textView.getText().toString();
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-        Calendar c = Calendar.getInstance();
+
         try {
             // Устанавливаем дату в календарь
             c.setTime(sdf.parse(currentDate));
@@ -799,14 +806,14 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(selectedDate);
 
         // Вызываем метод addDataToFileAndTextView при изменении даты
-        int studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
-        int[][] VseN = new int[studentCount][4];
-        TextView[][] arrTextViewWithN = new TextView[studentCount][4];
+        studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
+        VseN = new int[studentCount][4];
+         arrTextViewWithN = new TextView[studentCount][4];
 
         for (int i = 0; i < studentCount; i++) {
             for (int j = 0; j < 4; j++) {
-                String strN = "N" + (i + 1) + (j + 1);
-                int resIDN = getResources().getIdentifier(strN, "id", getPackageName());
+                 strN = "N" + (i + 1) + (j + 1);
+                 resIDN = getResources().getIdentifier(strN, "id", getPackageName());
                 arrTextViewWithN[i][j] = (TextView) findViewById(resIDN);
             }
         }
@@ -816,11 +823,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void BackDateMenuItemSelected() {
         // Получаем ссылку на TextView
-        TextView textView = findViewById(R.id.Data);
+        textView = findViewById(R.id.Data);
         // Получаем текущую дату из TextView
         String currentDate = textView.getText().toString();
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-        Calendar c = Calendar.getInstance();
+
         try {
             // Устанавливаем дату в календарь
             c.setTime(sdf.parse(currentDate));
@@ -837,14 +844,14 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(selectedDate);
 
         // Вызываем метод addDataToFileAndTextView при изменении даты
-        int studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
-        int[][] VseN = new int[studentCount][4];
-        TextView[][] arrTextViewWithN = new TextView[studentCount][4];
+        studentCount = SpisokGrypp(Integer.parseInt(((Spinner) findViewById(R.id.NamberGrypp)).getSelectedItem().toString()));
+        VseN = new int[studentCount][4];
+        arrTextViewWithN = new TextView[studentCount][4];
 
         for (int i = 0; i < studentCount; i++) {
             for (int j = 0; j < 4; j++) {
-                String strN = "N" + (i + 1) + (j + 1);
-                int resIDN = getResources().getIdentifier(strN, "id", getPackageName());
+                 strN = "N" + (i + 1) + (j + 1);
+                resIDN = getResources().getIdentifier(strN, "id", getPackageName());
                 arrTextViewWithN[i][j] = (TextView) findViewById(resIDN);
             }
         }
@@ -883,14 +890,14 @@ public class MainActivity extends AppCompatActivity {
         Spinner spinnerGryps = (Spinner)findViewById(R.id.NamberGrypp);
         setupSpinner(spinnerGryps, R.array.Gryps);
 
-        Spinner[] spinners = new Spinner[]{
+        spinners = new Spinner[]{
                 (Spinner) findViewById(R.id.Para1),
                 (Spinner) findViewById(R.id.Para2),
                 (Spinner) findViewById(R.id.Para3),
                 (Spinner) findViewById(R.id.Para4)
         };
 
-        TextView[] textViews = new TextView[]{
+        textViews = new TextView[]{
                 (TextView) findViewById(R.id.TextViewPara1),
                 (TextView) findViewById(R.id.TextViewPara2),
                 (TextView) findViewById(R.id.TextViewPara3),

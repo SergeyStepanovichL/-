@@ -18,7 +18,7 @@ public class ExcelReader {
 
     // Метод для чтения данных из Excel файла
     public static String[][] readExcelFile(File file, int startRow, int endRow, int startCol, int endCol) throws IOException {
-        Workbook workbook = WorkbookFactory.create(file);
+        Workbook workbook = WorkbookFactory.create(file);///////////////  at com.example.propyski4.ExcelReader.readExcelFile(ExcelReader.java:21)  at com.example.propyski4.MainActivity.addDataToTextView(MainActivity.java:573)
         FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
         Sheet sheet = workbook.getSheetAt(0);
         List<String[]> rows = new ArrayList<>();
@@ -31,7 +31,7 @@ public class ExcelReader {
                     if (cell != null) { // Проверка на null
                         String value;
                         if (cell.getCellType() == CellType.FORMULA) {
-                            CellValue cellValue = evaluator.evaluate(cell);
+                            CellValue cellValue = evaluator.evaluate(cell);/////at com.example.propyski4.ExcelReader.readExcelFile(ExcelReader.java:34)
                             switch (cellValue.getCellType()) {
                                 case NUMERIC:
                                     double numericValue = cellValue.getNumberValue();
