@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="para">
+        <item>Нет пары</item>
+        <item>КПЯП</item>
+        <item>Тестирование ПО</item>
+        <item>ТРПО</item>
+        <item>Англ яз. проф. лексика</item>
+        <item>Защита компьютерной информации</item>
+
+    </string-array>
+</resources>

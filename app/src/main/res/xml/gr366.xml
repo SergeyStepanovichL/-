@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<students xmlns:android="http://schemas.android.com/apk/res/android">
+    <student>Авдей А. А.</student>
+    <student>Балакирева А. М.</student>
+    <student>Бродский В. А.</student>
+    <student>Викарчук А. А.</student>
+    <student>Викторович С. С.</student>
+    <student>Давидович Г. С.</student>
+    <student>Дробыш С. В.</student>
+    <student>Елисеев А. Г.</student>
+    <student>Капюта Е. В.</student>
+    <student>Крайний Д. В.</student>
+    <student>Лапко Е. К.</student>
+    <student>Литвинко С. С.</student>
+    <student>Нестерович Н. Д.</student>
+    <student>Поплавская А. Д.</student>
+    <student>Попов И. В.</student>
+    <student>Региневич В. С.</student>
+    <student>Синьков А. Р.</student>
+    <student>Стовба К. А.</student>
+    <student>Томаш В. В.</student>
+    <student>Фадин И. В.</student>
+    <student>Шамкалович С. А.</student>
+    <student>Шукало П. К.</student>
+    <student>Ясевич Е. И.</student>
+</students>
